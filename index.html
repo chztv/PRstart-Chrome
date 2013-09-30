@@ -1,0 +1,1409 @@
+<!DOCTYPE htmlPUBLIC "-//W3C//DTD XHTML 1.0Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+    
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>
+            PR新标签页
+        </title>
+        <link media="screen and (max-width:1500px)" rel="stylesheet" type="text/css"
+        href="css/small.css">
+        <link media="screen and (min-width:1500px)" rel="stylesheet" type="text/css"
+        href="css/big.css">
+        <script type="text/javascript" src="js/jquery.js">
+        </script>
+        <script type="text/javascript" src="js/mousewheel.js">
+        </script>
+        <script type="text/javascript" src="js/easing.js">
+        </script>
+        <script type="text/javascript" src="js/weather.js">
+        </script>
+        <script type="text/javascript" src="js/search.js">
+        </script>
+        <script type="text/javascript" src="js/set.js">
+        </script>
+        <script type="text/javascript" src="js/miyu.js">
+        </script>
+    </head>
+    
+    <body>
+        <div id="set" desk="" lock="false" addvalue='' addto='' searchop="1" searchshow="0"
+        menu="1">
+        </div>
+        <div id="nav">
+            <div class="navleft" id="setbutton">
+                设置
+            </div>
+            <div class="navleft" id="hideico" show="1">
+                隐藏图标
+            </div>
+            <div class="navleft" id="appmanage">
+                应用管理
+            </div>
+            <div id="navright" title="点击查看未来天气">
+                <div id="weathercity" style="float:left;">
+                </div>
+                <div id="temp" style="float:left;">
+                </div>
+                <div id="tianqi" style="float:left;">
+                    正在获取天气……
+                </div>
+            </div>
+        </div>
+        <div id="appfooter">
+            <div class="foot" id="xiezai">
+                卸载
+            </div>
+            <div class="foot" id="jinyong">
+                禁用
+            </div>
+            <div class="foot" id="appicoquxiao">
+                取消
+            </div>
+        </div>
+        <div id="footer">
+            <div class="foot" id="icoshanchu">
+                删除
+            </div>
+            <div class="foot" id="whynot">
+                为什么
+            </div>
+            <div class="foot" id="icoquxiao">
+                取消
+            </div>
+        </div>
+        <div id="main">
+            <div id="search">
+                <div id="options">
+                    <li class="op" style="border-bottom:solid rgba(238, 20, 20,1) 2px;" opid="1"
+                    id="wy">
+                        网页
+                    </li>
+                    <li class="op" opid="2" id="tb">
+                        淘宝
+                    </li>
+                    <li class="op" opid="3" id="tm">
+                        天猫
+                    </li>
+                    <li class="op" opid="4" id="xw">
+                        新闻
+                    </li>
+                    <li class="op" opid="5" id="tp">
+                        图片
+                    </li>
+                    <li class="op" opid="6" id="sp">
+                        视频
+                    </li>
+                    <li class="op" opid="7" id="yy">
+                        音乐
+                    </li>
+                    <li class="op" opid="8" id="dt">
+                        地图
+                    </li>
+                </div>
+                <div id="searchico">
+                    <li class="searchEngine" id="searchEngine" thesearch="2">
+                        百度
+                    </li>
+                    <li class="li" id="googlelist" style="display:none;color:rgb(238, 233, 233);"
+                    searchid="1">
+                        谷歌
+                    </li>
+                    <li class="li" id="baidulist" style="display:none;color:rgb(238, 233, 233);"
+                    searchid="2">
+                        百度
+                    </li>
+                    <li class="li" id="taobaolist" style="display:none;color:rgb(238, 233, 233);"
+                    searchid="3">
+                        淘宝
+                    </li>
+                </div>
+                <form id="searchform">
+                    <input type="text" id="searchinput" autocomplete="off" f="0" />
+                    <input type="submit" value="" id="searchsubmit" />
+                    <div id="suggestion" show="false" li="-1">
+                        <li class="suggest" id="sg0" s="false">
+                        </li>
+                        <li class="suggest" id="sg1" s="false">
+                        </li>
+                        <li class="suggest" id="sg2" s="false">
+                        </li>
+                        <li class="suggest" id="sg3" s="false">
+                        </li>
+                        <li class="suggest" id="sg4" s="false">
+                        </li>
+                        <li class="suggest" id="sg5" s="false">
+                        </li>
+                        <li class="suggest" id="sg6" s="false">
+                        </li>
+                        <li class="suggest" id="sg7" s="false">
+                        </li>
+                        <li class="suggest" id="sg8" s="false">
+                        </li>
+                        <li class="suggest" id="sg9" s="false">
+                        </li>
+                    </div>
+                </form>
+            </div>
+            <div id="slide">
+            </div>
+            <div id="pointing">
+            </div>
+        </div>
+        <div id="left_button">
+        </div>
+        <div id="righ_button">
+        </div>
+        <div id="lb2">
+            <div id="shengming">
+                <p class="about">
+                    尊敬的米鱼新标签页用户您好：
+                </p>
+                <p class="about">
+                    首先感谢您使用我的产品。米鱼新标签页是一个非营利性的产品，由个人开发和运营。但是在米鱼的一些功能中，诸如天气预报、同步bing.com壁纸等，需要服务器的支持，我每月需要支付高昂的服务器费用，对于一个没有收入的大学生来说已是不堪重负。为此有两个图标的链接为赞助商链接，暂时不允许用户删除，除此之外的其它图标您都可以随意的删除、添加。对于此部分微薄的广告收入，如果支付了服务器费用后还有余额，我将用于公益事业！
+                </p>
+                <p class="about">
+                    再次感谢您的使用与支持！
+                </p>
+                <p class="about">
+                    如有任何问题，请联系我:
+                    <a href="http://weibo.com/u/1641256823" target="_blank" style="color:#33B5E5">
+                        @栁易寒
+                    </a>
+                </p>
+                <input type="button" class="imgqd" id="queding3" value="确定">
+            </div>
+        </div>
+        <div id="lightbox">
+            <div id="miyuset" style="display:none;">
+                <div>
+                    <div id="setmenu">
+                        <div id="changgui" class="setmenu">
+                            常规
+                        </div>
+                        <div id="bizhi" class="setmenu">
+                            壁纸
+                        </div>
+                        <div id="tqyb" class="setmenu">
+                            天气
+                        </div>
+                        <div id="setalert">
+                        </div>
+                        <div id="biaoji">
+                        </div>
+                    </div>
+                    <span id="setback">
+                        返回
+                    </span>
+                    <div id="cgset">
+                        <div class="setp" style="margin-top:30px">
+                            在何处打开网站/应用
+                        </div>
+                        <div class="openposi1" style="left:10px" id="set1">
+                            当前页面
+                        </div>
+                        <div class="openposi1" style="left:180px" id="set2">
+                            新标签页
+                        </div>
+                        <div id="biaoji1">
+                        </div>
+                        <div class="setp">
+                            在何处打开搜索页面
+                        </div>
+                        <div class="openposi2" style="left:10px" id="set3">
+                            当前页面
+                        </div>
+                        <div class="openposi2" style="left:180px" id="set4">
+                            新标签页
+                        </div>
+                        <div id="biaoji2">
+                        </div>
+                        <div class="setp">
+                            桌面数量
+                        </div>
+                        <div class="openposi3" style="left:10px" id="set5">
+                            3个
+                        </div>
+                        <div class="openposi3" style="left:180px" id="set6">
+                            5个
+                        </div>
+                        <div id="biaoji3">
+                        </div>
+                        <div class="setp" style="position:absolute;top:-42px;left:420px;">
+                            调节图标不透明度
+                        </div>
+                        <div class="setp" style="position:absolute;top:-52px;left:740px;color:#FF4444;font-size:45px;">
+                            %
+                        </div>
+                        <div class="setp" style="position:absolute;top:-42px;left:680px;color:#99CC00;"
+                        id="tmd">
+                            100
+                        </div>
+                        <div>
+                            <input type="range" min="0" max="100" step="1" value="100" id="range"
+                            />
+                        </div>
+                        <div style="position:absolute;top:160px;left:430px;border:#ccc solid 1px;width:360px;height:210px;background-image:url(bg.jpg);background-size:100%;">
+                            <div style="background-image:url(ico/6.png);background-size:100%;width:184px;height:92px;margin-left:auto;margin-right:auto;margin-top:60px;"
+                            id="tmdemo">
+                            </div>
+                        </div>
+                        <div id="fenge">
+                        </div>
+                    </div>
+                    <div id="bizhiset" style="display:none">
+                        <div class="setp" style="margin-top:30px">
+                            使用何种壁纸
+                        </div>
+                        <div class="openposi4" style="left:10px" id="gsby">
+                            跟随bing每日一图
+                        </div>
+                        <div class="openposi4" style="left:250px" id="bdtp">
+                            本地图片
+                        </div>
+                        <div class="openposi4" style="left:400px" id="wltp">
+                            网络图片
+                        </div>
+                        <div class="openposi4" style="left:550px" id="csbj">
+                            纯色背景
+                        </div>
+                        <div class="openposi4" style="left:700px" id="mrbz">
+                            默认壁纸
+                        </div>
+                        <div id="biaoji4">
+                        </div>
+                        <div id="bingimginput" style="display:none">
+                            <div id="bingimgpre">
+                            </div>
+                            <div id="bingimgsrc" style="display:none;">
+                                图片来源：
+                                <a href="http://cn.bing.com/" target="_blank">
+                                    http://cn.bing.com
+                                </a>
+                            </div>
+                            <input class="imgqd" type="button" id="bingqd" value="设为壁纸">
+                        </div>
+                        <div id="imginput" style="display:none">
+                            <div id="imgpathover">
+                            </div>
+                            <input id="imgpath" value="&nbsp;请点击右侧选择图片" />
+                            <div id="imgup">
+                                选择图片
+                                <input type="file" id="imgupload" single accept="image/*" />
+                                <input value="设为壁纸" type="button" class="imgqd" id="swbz">
+                                <div id="maximg">
+                                    请从电脑中选择小于1.5M的图片作为壁纸
+                                </div>
+                            </div>
+                            <div id="imgpre">
+                            </div>
+                        </div>
+                        <div id="urlimginput" style="display:none">
+                            <input id="urlimgpath" value="请输入图片url" />
+                            <input type="button" id="imgqd" value="确定" />
+                            <input value="设为壁纸" type="button" class="imgqd" id="swbz2">
+                            <div id="urlimgpre">
+                            </div>
+                        </div>
+                        <div id="colorbg" style="display:none">
+                            <div>
+                                <div class="bzcolor" style="background-color:rgb(37,37,37);">
+                                </div>
+                                <div class="bzcolor" style="background-color:rgb(46,23,0);">
+                                </div>
+                                <div class="bzcolor" style="background-color:rgb(78,0,0);">
+                                </div>
+                                <div class="bzcolor" style="background-color:rgb(78,0,56);">
+                                </div>
+                                <div class="bzcolor" style="background-color:rgb(45,0,78);">
+                                </div>
+                                <div class="bzcolor" style="background-color:rgb(31,0,104);">
+                                </div>
+                                <div class="bzcolor" style="background-color:rgb(0,30,78);">
+                                </div>
+                                <div class="bzcolor" style="background-color:rgb(0,77,96);">
+                                </div>
+                                <div class="bzcolor" style="background-color:rgb(0,74,0);">
+                                </div>
+                                <div class="bzcolor" style="background-color:rgb(21,153,42);">
+                                </div>
+                                <div class="bzcolor" style="background-color:rgb(229,108,25);">
+                                </div>
+                                <div class="bzcolor" style="background-color:rgb(184,27,27);">
+                                </div>
+                                <div class="bzcolor" style="background-color:rgb(184,27,108);">
+                                </div>
+                                <div class="bzcolor" style="background-color:rgb(105,27,184);">
+                                </div>
+                                <div class="bzcolor" style="background-color:rgb(27,88,184);">
+                                </div>
+                                <div class="bzcolor" style="background-color:rgb(86,156,227);">
+                                </div>
+                                <div class="bzcolor" style="background-color:rgb(0,170,170);">
+                                </div>
+                                <div class="bzcolor" style="background-color:rgb(131,186,31);">
+                                </div>
+                                <div class="bzcolor" style="background-color:rgb(211,157,9);">
+                                </div>
+                                <div class="bzcolor" style="background-color:rgb(224,100,183);">
+                                </div>
+                                <div class="bzcolor" style="background-color:rgb(105,105,105);">
+                                </div>
+                            </div>
+                            <div id="bzpointer">
+                            </div>
+                        </div>
+                        <div id="defaultbg" style="display:none;">
+                            <img src="bg.jpg" style="width:300px;margin-top:60px;margin-left:10px;">
+                            <input class="imgqd" type="button" id="mrqd" style="margin-top:217px;margin-left:50px"
+                            value="设为壁纸">
+                        </div>
+                    </div>
+                    <div id="tianqiset" style="display:none">
+                        <div class="setp" style="margin-top:30px">
+                            您想在右上角显示哪个城市的天气
+                        </div>
+                        <div class="openposi5" style="left:10px" id="zdhq">
+                            自动获取位置
+                        </div>
+                        <input class="imgqd" id="swmrcs1" type="button" value="设为默认城市" />
+                        <div id="huoqucity">
+                            正在获取您所在的城市……
+                        </div>
+                        <div class="openposi5" style="left:180px" id="sdsz">
+                            手动设置默认位置
+                        </div>
+                        <div id="biaoji5">
+                        </div>
+                        <div id="setcity" style="display:none">
+                            <div id="citytxt">
+                                请输入您要添加的城市名，例如“北京”，并保存。注意不要输入错误的地名，否则将无法查询。
+                            </div>
+                            <div id="cityinput">
+                                <input id="inputcity" />
+                                <input type="button" value="保存" id="citybutton" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="app" style="display:none;">
+                <div id="firstline">
+                    <span id="appback">
+                        返回
+                    </span>
+                </div>
+                <div id="secondeline">
+                </div>
+            </div>
+            <div id="addbox" style="display:none;">
+                <div id="menu">
+                    <div id="normal" class="menu_op" style="color:#33B5E5;border-bottom:2px solid #33B5E5;">
+                        常用网站
+                    </div>
+                    <div id="byself" class="menu_op">
+                        自定义
+                    </div>
+                    <div id="native" class="menu_op">
+                        本地应用
+                    </div>
+                    <div class="back" id="back">
+                        返回
+                    </div>
+                </div>
+                <div id="normalsite" class="contain">
+                    <div id="sitelist">
+                        <div class="sitelist" icocontain="allsite" style="color:#33B5E5;border-bottom:1px solid #33B5E5;">
+                            全部网站
+                        </div>
+                        <div class="sitelist" icocontain="video">
+                            视频音乐
+                        </div>
+                        <div class="sitelist" icocontain="shop">
+                            网购团购
+                        </div>
+                        <div class="sitelist" icocontain="news">
+                            新闻门户
+                        </div>
+                        <div class="sitelist" icocontain="sns">
+                            社区微博
+                        </div>
+                        <div class="sitelist" icocontain="read">
+                            阅读娱乐
+                        </div>
+                        <div class="sitelist" icocontain="travel">
+                            生活旅行
+                        </div>
+                        <div class="sitelist" icocontain="tech">
+                            财经科技
+                        </div>
+                        <div class="sitelist" icocontain="game">
+                            游戏应用
+                        </div>
+                    </div>
+                    <div id="sites">
+                        <div id="allsite" class="icocontent">
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/103.png);" value='{"name":"chrome应用商店","url":"https://chrome.google.com/webstore/category/home?utm_source=chrome-ntp-icon","icoid":"","type":"1","img":"ico/103.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/1.png);" value='{"name":"淘宝特卖","url":"http://www.taobao.com/go/chn/tbk_channel/channelcode.php?pid=mm_29924319_3495625_11463104&eventid=101329","icoid":"","type":"1","img":"ico/1.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/2.png);" value='{"name":"天猫商城","url":"http://s.click.taobao.com/t_9?p=mm_29924319_0_0&l=http%3A%2F%2Fwww.tmall.com","icoid":"","type":"1","img":"ico/2.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/3.png);" value='{"name":"京东商城","url":"http://www.jd.com","icoid":"","type":"1","img":"ico/3.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/4.png);" value='{"name":"优酷视频","url":"http://www.youku.com/","icoid":"","type":"1","img":"ico/4.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/101.png);" value='{"name":"PPTV","url":"http://www.pptv.com/","icoid":"","type":"1","img":"ico/101.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/5.png);" value='{"name":"网易","url":"http://www.163.com","icoid":"","type":"1","img":"ico/5.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/6.png);" value='{"name":"新浪微博","url":"http://weibo.com","icoid":"","type":"1","img":"ico/6.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/7.png);" value='{"name":"支付宝","url":"https://www.alipay.com","icoid":"","type":"1","img":"ico/7.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/8.png);" value='{"name":"豆瓣","url":"http://www.douban.com","icoid":"","type":"1","img":"ico/8.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/9.png);" value='{"name":"QQ空间","url":"http://qzone.qq.com","icoid":"","type":"1","img":"ico/9.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/10.png);" value='{"name":"去哪儿网","url":"http://www.qunar.com","icoid":"","type":"1","img":"ico/10.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/11.png);" value='{"name":"知乎","url":"http://zhihu.com","icoid":"","type":"1","img":"ico/11.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/12.png);" value='{"name":"百度音乐","url":"http://music.baidu.com","icoid":"","type":"1","img":"ico/12.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/13.png);" value='{"name":"1号店","url":"http://www.yihaodian.com","icoid":"","type":"1","img":"ico/13.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/14.png);" value='{"name":"58同城","url":"http://www.58.com","icoid":"","type":"1","img":"ico/14.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/15.png);" value='{"name":"4399小游戏","url":"http://4399.com","icoid":"","type":"1","img":"ico/15.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/16.png);" value='{"name":"百度随心听","url":"http://fm.baidu.com/","icoid":"","type":"1","img":"ico/16.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/17.png);" value='{"name":"Camera360","url":"http://web.camera360.com","icoid":"","type":"1","img":"ico/17.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/18.png);" value='{"name":"宠物连连看","url":"http://f2.doyo.cn/flash/swf/d8/61f48048cb16266b2824.swf","icoid":"","type":"1","img":"ico/18.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/19.png);" value='{"name":"当当网","url":"http://www.dangdang.com","icoid":"","type":"1","img":"ico/19.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/20.png);" value='{"name":"大鱼吃小鱼","url":"http://f4.doyo.cn/flash/swf/93/6b479e825c45db1783c2.swf","icoid":"","type":"1","img":"ico/20.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/21.png);" value='{"name":"豆瓣FM","url":"http://douban.fm","icoid":"","type":"1","img":"ico/21.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/22.png);" value='{"name":"ebay","url":"http://www.ebay.com","icoid":"","type":"1","img":"ico/22.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/23.png);" value='{"name":"facebook","url":"http://facebook.com","icoid":"","type":"1","img":"ico/23.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/24.png);" value='{"name":"凡客诚品","url":"http://www.vancl.com","icoid":"","type":"1","img":"ico/24.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/25.png);" value='{"name":"凡人修真","url":"http://frxz2.4399.com","icoid":"","type":"1","img":"ico/25.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/26.png);" value='{"name":"凤凰网","url":"http://www.ifeng.com","icoid":"","type":"1","img":"ico/26.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/27.png);" value='{"name":"风行影视","url":"http://www.funshion.com","icoid":"","type":"1","img":"ico/27.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/28.png);" value='{"name":"google+","url":"https://plus.google.com","icoid":"","type":"1","img":"ico/28.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/29.png);" value='{"name":"黄金矿工","url":"http://f1.doyo.cn/flash/swf/9c/cce15300269961b81e3b.swf","icoid":"","type":"1","img":"ico/29.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/30.png);" value='{"name":"IT之家","url":"http://www.ithome.com","icoid":"","type":"1","img":"ico/30.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/31.png);" value='{"name":"金山快盘","url":"https://www.kuaipan.cn/account_login.htm","icoid":"","type":"1","img":"ico/31.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/32.png);" value='{"name":"酷我音乐","url":"http://kuwo.cn","icoid":"","type":"1","img":"ico/32.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/33.png);" value='{"name":"乐视网","url":"http://www.letv.com","icoid":"","type":"1","img":"ico/33.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/34.png);" value='{"name":"PPS","url":"http://www.pps.tv","icoid":"","type":"1","img":"ico/34.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/35.png);" value='{"name":"秦美人","url":"http://q.37wan.com","icoid":"","type":"1","img":"ico/35.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/36.png);" value='{"name":"QQ音乐","url":"http://y.qq.com","icoid":"","type":"1","img":"ico/36.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/37.png);" value='{"name":"QQ游戏","url":"http://h5.qq.com","icoid":"","type":"1","img":"ico/37.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/38.png);" value='{"name":"人人网","url":"http://www.renren.com","icoid":"","type":"1","img":"ico/38.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/39.png);" value='{"name":"三国演义","url":"http://sg.2800.com","icoid":"","type":"1","img":"ico/39.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/41.png);" value='{"name":"随手记","url":"http://www.feidee.com/money/login.jsp","icoid":"","type":"1","img":"ico/41.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/42.png);" value='{"name":"苏宁易购","url":"http://www.suning.com","icoid":"","type":"1","img":"ico/42.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/43.png);" value='{"name":"新浪网","url":"http://www.sina.com","icoid":"","type":"1","img":"ico/43.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/44.png);" value='{"name":"搜狐","url":"http://www.sohu.com","icoid":"","type":"1","img":"ico/44.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/45.png);" value='{"name":"搜狐视频","url":"http://tv.sohu.com","icoid":"","type":"1","img":"ico/45.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/46.png);" value='{"name":"淘宝旅行","url":"http://trip.taobao.com","icoid":"","type":"1","img":"ico/46.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/48.png);" value='{"name":"twitter","url":"http://twitter.com","icoid":"","type":"1","img":"ico/48.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/49.png);" value='{"name":"WEBQQ","url":"http://web.qq.com","icoid":"","type":"1","img":"ico/49.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/50.png);" value='{"name":"下厨房","url":"http://www.xiachufang.com","icoid":"","type":"1","img":"ico/50.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/51.png);" value='{"name":"鲜果联播","url":"http://xianguo.com","icoid":"","type":"1","img":"ico/51.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/52.png);" value='{"name":"携程网","url":"http://www.ctrip.com","icoid":"","type":"1","img":"ico/52.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/53.png);" value='{"name":"亚马逊","url":"http://www.amazon.cn","icoid":"","type":"1","img":"ico/53.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/54.png);" value='{"name":"音悦台","url":"http://www.yinyuetai.com","icoid":"","type":"1","img":"ico/54.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/55.png);" value='{"name":"Youtube","url":"http://youtube.com","icoid":"","type":"1","img":"ico/55.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/56.png);" value='{"name":"植物大战僵尸","url":"http://f.doyo.cn/special/flash/534753/pvz_9_15.swf","icoid":"","type":"1","img":"ico/56.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/57.png);" value='{"name":"醉西游","url":"http://zxy.yeyou.com/list.shtml?gtype=1018&uf=","icoid":"","type":"1","img":"ico/57.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/58.png);" value='{"name":"爱范儿","url":"http://www.ifanr.com","icoid":"","type":"1","img":"ico/58.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/59.png);" value='{"name":"爱奇艺","url":"http://www.iqiyi.com","icoid":"","type":"1","img":"ico/59.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/60.png);" value='{"name":"百度贴吧","url":"http://tieba.baidu.com","icoid":"","type":"1","img":"ico/60.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/61.png);" value='{"name":"百度云相册","url":"http://xiangce.baidu.com","icoid":"","type":"1","img":"ico/61.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/62.png);" value='{"name":"百合网","url":"http://www.baihe.com","icoid":"","type":"1","img":"ico/62.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/63.png);" value='{"name":"百姓网","url":"http://baixing.com","icoid":"","type":"1","img":"ico/63.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/65.png);" value='{"name":"暴力摩托","url":"http://f3.doyo.cn/flash/swf/ef/1e031c936e36ad79bd09.swf","icoid":"","type":"1","img":"ico/65.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/66.png);" value='{"name":"暴走漫画","url":"http://baozoumanhua.com","icoid":"","type":"1","img":"ico/66.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/67.png);" value='{"name":"部落守卫战","url":"http://bl.qq.com","icoid":"","type":"1","img":"ico/67.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/68.png);" value='{"name":"愤怒的小鸟","url":"http://f3.doyo.cn/flash/swf/85/96a40a32fe64633f8078.swf","icoid":"","type":"1","img":"ico/68.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/69.png);" value='{"name":"凤凰视频","url":"http://v.ifeng.com","icoid":"","type":"1","img":"ico/69.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/70.png);" value='{"name":"工商银行","url":"http://www.icbc.com.cn/icbc","icoid":"","type":"1","img":"ico/70.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/71.png);" value='{"name":"街机三国","url":"http://www.91wan.com/jjsg","icoid":"","type":"1","img":"ico/71.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/72.png);" value='{"name":"聚美优品","url":"http://cd.jumei.com","icoid":"","type":"1","img":"ico/72.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/73.png);" value='{"name":"拉手网","url":"http://www.lashou.com","icoid":"","type":"1","img":"ico/73.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/74.png);" value='{"name":"洛克王国","url":"http://17roco.qq.com","icoid":"","type":"1","img":"ico/74.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/75.png);" value='{"name":"美图秀秀","url":"http://xiuxiu.web.meitu.com","icoid":"","type":"1","img":"ico/75.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/76.png);" value='{"name":"美团网","url":"http://www.meituan.com","icoid":"","type":"1","img":"ico/76.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/77.png);" value='{"name":"七雄争霸","url":"http://game.7.qq.com","icoid":"","type":"1","img":"ico/77.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/78.png);" value='{"name":"起点网","url":"http://www.qidian.com","icoid":"","type":"1","img":"ico/78.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/79.png);" value='{"name":"热血海贼王","url":"http://hzw.zuiyouxi.com","icoid":"","type":"1","img":"ico/79.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/80.png);" value='{"name":"如意淘","url":"http://ruyi.taobao.com","icoid":"","type":"1","img":"ico/80.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/81.png);" value='{"name":"三国杀","url":"http://web.sanguosha.com","icoid":"","type":"1","img":"ico/81.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/82.png);" value='{"name":"神曲","url":"http://sq.yeyou.com","icoid":"","type":"1","img":"ico/82.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/83.png);" value='{"name":"神仙道","url":"http://sxd.xd.com","icoid":"","type":"1","img":"ico/83.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/84.png);" value='{"name":"太平洋电脑","url":"http://www.pconline.com.cn","icoid":"","type":"1","img":"ico/84.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/85.png);" value='{"name":"淘宝网","url":"http://www.taobao.com","icoid":"","type":"1","img":"ico/85.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/86.png);" value='{"name":"腾讯视频","url":"http://v.qq.com","icoid":"","type":"1","img":"ico/86.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/87.png);" value='{"name":"腾讯微博","url":"http://t.qq.com","icoid":"","type":"1","img":"ico/87.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/88.png);" value='{"name":"天涯论坛","url":"http://bbs.tianya.cn","icoid":"","type":"1","img":"ico/88.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/89.png);" value='{"name":"同花顺","url":"http://www.10jqka.com.cn","icoid":"","type":"1","img":"ico/89.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/90.png);" value='{"name":"土豆网","url":"http://www.tudou.com","icoid":"","type":"1","img":"ico/90.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/91.png);" value='{"name":"网易云阅读","url":"http://yuedu.163.com","icoid":"","type":"1","img":"ico/91.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/92.png);" value='{"name":"唯品会","url":"http://shop.vipshop.com","icoid":"","type":"1","img":"ico/92.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/93.png);" value='{"name":"56网","url":"http://www.56.com","icoid":"","type":"1","img":"ico/93.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/94.png);" value='{"name":"虾米网","url":"http://www.xiami.com","icoid":"","type":"1","img":"ico/94.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/95.png);" value='{"name":"迅雷看看","url":"http://www.kankan.com","icoid":"","type":"1","img":"ico/95.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/96.png);" value='{"name":"有妖气","url":"http://www.u17.com","icoid":"","type":"1","img":"ico/96.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/97.png);" value='{"name":"在线PS","url":"http://www.tuyitu.com/photoshop","icoid":"","type":"1","img":"ico/97.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/98.png);" value='{"name":"中关村在线","url":"http://www.zol.com.cn","icoid":"","type":"1","img":"ico/98.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/99.png);" value='{"name":"猪八戒网","url":"http://www.zhubajie.com","icoid":"","type":"1","img":"ico/99.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/100.png);" value='{"name":"纵横中文网","url":"http://www.zongheng.com","icoid":"","type":"1","img":"ico/100.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="video" style="display:none;" class="icocontent">
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/4.png);" value='{"name":"优酷视频","url":"http://www.youku.com/","icoid":"","type":"1","img":"ico/4.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/101.png);" value='{"name":"PPTV","url":"http://www.pptv.com/","icoid":"","type":"1","img":"ico/101.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/12.png);" value='{"name":"百度音乐","url":"http://music.baidu.com","icoid":"","type":"1","img":"ico/12.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/16.png);" value='{"name":"百度随心听","url":"http://fm.baidu.com/","icoid":"","type":"1","img":"ico/16.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/21.png);" value='{"name":"豆瓣FM","url":"http://douban.fm","icoid":"","type":"1","img":"ico/21.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/27.png);" value='{"name":"风行影视","url":"http://www.funshion.com","icoid":"","type":"1","img":"ico/27.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/32.png);" value='{"name":"酷我音乐","url":"http://kuwo.cn","icoid":"","type":"1","img":"ico/32.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/33.png);" value='{"name":"乐视网","url":"http://www.letv.com","icoid":"","type":"1","img":"ico/33.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/34.png);" value='{"name":"PPS","url":"http://www.pps.tv","icoid":"","type":"1","img":"ico/34.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/36.png);" value='{"name":"QQ音乐","url":"http://y.qq.com","icoid":"","type":"1","img":"ico/36.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/45.png);" value='{"name":"搜狐视频","url":"http://tv.sohu.com","icoid":"","type":"1","img":"ico/45.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/54.png);" value='{"name":"音悦台","url":"http://www.yinyuetai.com","icoid":"","type":"1","img":"ico/54.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/55.png);" value='{"name":"Youtube","url":"http://youtube.com","icoid":"","type":"1","img":"ico/55.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/59.png);" value='{"name":"爱奇艺","url":"http://www.iqiyi.com","icoid":"","type":"1","img":"ico/59.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/69.png);" value='{"name":"凤凰视频","url":"http://v.ifeng.com","icoid":"","type":"1","img":"ico/69.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/86.png);" value='{"name":"腾讯视频","url":"http://v.qq.com","icoid":"","type":"1","img":"ico/86.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/90.png);" value='{"name":"土豆网","url":"http://www.tudou.com","icoid":"","type":"1","img":"ico/90.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/93.png);" value='{"name":"56网","url":"http://www.56.com","icoid":"","type":"1","img":"ico/93.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/94.png);" value='{"name":"虾米网","url":"http://www.xiami.com","icoid":"","type":"1","img":"ico/94.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/95.png);" value='{"name":"迅雷看看","url":"http://www.kankan.com","icoid":"","type":"1","img":"ico/95.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="shop" style="display:none;" class="icocontent">
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/85.png);" value='{"name":"淘宝网","url":"http://www.taobao.com","icoid":"","type":"1","img":"ico/85.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/1.png);" value='{"name":"淘宝特卖","url":"http://www.taobao.com/go/chn/tbk_channel/channelcode.php?pid=mm_29924319_3495625_11463104&eventid=101329","icoid":"","type":"1","img":"ico/1.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/2.png);" value='{"name":"天猫商城","url":"http://s.click.taobao.com/t_9?p=mm_29924319_0_0&l=http%3A%2F%2Fwww.tmall.com","icoid":"","type":"1","img":"ico/2.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/3.png);" value='{"name":"京东商城","url":"http://www.jd.com","icoid":"","type":"1","img":"ico/3.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/13.png);" value='{"name":"1号店","url":"http://www.yihaodian.com","icoid":"","type":"1","img":"ico/13.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/19.png);" value='{"name":"当当网","url":"http://www.dangdang.com","icoid":"","type":"1","img":"ico/19.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/22.png);" value='{"name":"ebay","url":"http://www.ebay.com","icoid":"","type":"1","img":"ico/22.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/24.png);" value='{"name":"凡客诚品","url":"http://www.vancl.com","icoid":"","type":"1","img":"ico/24.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/42.png);" value='{"name":"苏宁易购","url":"http://www.suning.com","icoid":"","type":"1","img":"ico/42.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/53.png);" value='{"name":"亚马逊","url":"http://www.amazon.cn","icoid":"","type":"1","img":"ico/53.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/73.png);" value='{"name":"拉手网","url":"http://www.lashou.com","icoid":"","type":"1","img":"ico/73.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/76.png);" value='{"name":"美团网","url":"http://www.meituan.com","icoid":"","type":"1","img":"ico/76.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/80.png);" value='{"name":"如意淘","url":"http://ruyi.taobao.com","icoid":"","type":"1","img":"ico/80.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/92.png);" value='{"name":"唯品会","url":"http://shop.vipshop.com","icoid":"","type":"1","img":"ico/92.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/72.png);" value='{"name":"聚美优品","url":"http://cd.jumei.com","icoid":"","type":"1","img":"ico/72.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="news" style="display:none;" class="icocontent">
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/5.png);" value='{"name":"网易","url":"http://www.163.com","icoid":"","type":"1","img":"ico/5.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/26.png);" value='{"name":"凤凰网","url":"http://www.ifeng.com","icoid":"","type":"1","img":"ico/26.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/43.png);" value='{"name":"新浪网","url":"http://www.sina.com","icoid":"","type":"1","img":"ico/43.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/44.png);" value='{"name":"搜狐","url":"http://www.sohu.com","icoid":"","type":"1","img":"ico/44.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="sns" style="display:none;" class="icocontent">
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/6.png);" value='{"name":"新浪微博","url":"http://weibo.com","icoid":"","type":"1","img":"ico/6.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/8.png);" value='{"name":"豆瓣","url":"http://www.douban.com","icoid":"","type":"1","img":"ico/8.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/9.png);" value='{"name":"QQ空间","url":"http://qzone.qq.com","icoid":"","type":"1","img":"ico/9.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/11.png);" value='{"name":"知乎","url":"http://zhihu.com","icoid":"","type":"1","img":"ico/11.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/38.png);" value='{"name":"人人网","url":"http://www.renren.com","icoid":"","type":"1","img":"ico/38.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/48.png);" value='{"name":"twitter","url":"http://twitter.com","icoid":"","type":"1","img":"ico/48.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/49.png);" value='{"name":"WEBQQ","url":"http://web.qq.com","icoid":"","type":"1","img":"ico/49.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/87.png);" value='{"name":"腾讯微博","url":"http://t.qq.com","icoid":"","type":"1","img":"ico/87.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/88.png);" value='{"name":"天涯论坛","url":"http://bbs.tianya.cn","icoid":"","type":"1","img":"ico/88.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/28.png);" value='{"name":"google+","url":"https://plus.google.com","icoid":"","type":"1","img":"ico/28.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/60.png);" value='{"name":"百度贴吧","url":"http://tieba.baidu.com","icoid":"","type":"1","img":"ico/60.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/23.png);" value='{"name":"facebook","url":"http://facebook.com","icoid":"","type":"1","img":"ico/23.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="read" style="display:none;" class="icocontent">
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/91.png);" value='{"name":"网易云阅读","url":"http://yuedu.163.com","icoid":"","type":"1","img":"ico/91.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/96.png);" value='{"name":"有妖气","url":"http://www.u17.com","icoid":"","type":"1","img":"ico/96.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/100.png);" value='{"name":"纵横中文网","url":"http://www.zongheng.com","icoid":"","type":"1","img":"ico/100.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/78.png);" value='{"name":"起点网","url":"http://www.qidian.com","icoid":"","type":"1","img":"ico/78.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/66.png);" value='{"name":"暴走漫画","url":"http://baozoumanhua.com","icoid":"","type":"1","img":"ico/66.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/51.png);" value='{"name":"鲜果联播","url":"http://xianguo.com","icoid":"","type":"1","img":"ico/51.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="travel" style="display:none;" class="icocontent">
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/99.png);" value='{"name":"猪八戒网","url":"http://www.zhubajie.com","icoid":"","type":"1","img":"ico/99.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/7.png);" value='{"name":"支付宝","url":"https://www.alipay.com","icoid":"","type":"1","img":"ico/7.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/10.png);" value='{"name":"去哪儿网","url":"http://www.qunar.com","icoid":"","type":"1","img":"ico/10.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/14.png);" value='{"name":"58同城","url":"http://www.58.com","icoid":"","type":"1","img":"ico/14.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/46.png);" value='{"name":"淘宝旅行","url":"http://trip.taobao.com","icoid":"","type":"1","img":"ico/46.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/50.png);" value='{"name":"下厨房","url":"http://www.xiachufang.com","icoid":"","type":"1","img":"ico/50.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/52.png);" value='{"name":"携程网","url":"http://www.ctrip.com","icoid":"","type":"1","img":"ico/52.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/61.png);" value='{"name":"百度云相册","url":"http://xiangce.baidu.com","icoid":"","type":"1","img":"ico/61.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/62.png);" value='{"name":"百合网","url":"http://www.baihe.com","icoid":"","type":"1","img":"ico/62.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/63.png);" value='{"name":"百姓网","url":"http://baixing.com","icoid":"","type":"1","img":"ico/63.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/70.png);" value='{"name":"工商银行","url":"http://www.icbc.com.cn/icbc","icoid":"","type":"1","img":"ico/70.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/31.png);" value='{"name":"金山快盘","url":"https://www.kuaipan.cn/account_login.htm","icoid":"","type":"1","img":"ico/31.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/41.png);" value='{"name":"随手记","url":"http://www.feidee.com/money/login.jsp","icoid":"","type":"1","img":"ico/41.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="tech" style="display:none;" class="icocontent">
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/89.png);" value='{"name":"同花顺","url":"http://www.10jqka.com.cn","icoid":"","type":"1","img":"ico/89.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/58.png);" value='{"name":"爱范儿","url":"http://www.ifanr.com","icoid":"","type":"1","img":"ico/58.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/98.png);" value='{"name":"中关村在线","url":"http://www.zol.com.cn","icoid":"","type":"1","img":"ico/98.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/84.png);" value='{"name":"太平洋电脑","url":"http://www.pconline.com.cn","icoid":"","type":"1","img":"ico/84.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/30.png);" value='{"name":"IT之家","url":"http://www.ithome.com","icoid":"","type":"1","img":"ico/30.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="game" style="display:none;" class="icocontent">
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/15.png);" value='{"name":"4399小游戏","url":"http://4399.com","icoid":"","type":"1","img":"ico/15.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/17.png);" value='{"name":"Camera360","url":"http://web.camera360.com","icoid":"","type":"1","img":"ico/17.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/18.png);" value='{"name":"宠物连连看","url":"http://f2.doyo.cn/flash/swf/d8/61f48048cb16266b2824.swf","icoid":"","type":"1","img":"ico/18.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/20.png);" value='{"name":"大鱼吃小鱼","url":"http://f4.doyo.cn/flash/swf/93/6b479e825c45db1783c2.swf","icoid":"","type":"1","img":"ico/20.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/77.png);" value='{"name":"七雄争霸","url":"http://game.7.qq.com","icoid":"","type":"1","img":"ico/77.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/25.png);" value='{"name":"凡人修真","url":"http://frxz2.4399.com","icoid":"","type":"1","img":"ico/25.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/29.png);" value='{"name":"黄金矿工","url":"http://f1.doyo.cn/flash/swf/9c/cce15300269961b81e3b.swf","icoid":"","type":"1","img":"ico/29.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/35.png);" value='{"name":"秦美人","url":"http://q.37wan.com","icoid":"","type":"1","img":"ico/35.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/37.png);" value='{"name":"QQ游戏","url":"http://h5.qq.com","icoid":"","type":"1","img":"ico/37.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/39.png);" value='{"name":"三国演义","url":"http://sg.2800.com","icoid":"","type":"1","img":"ico/39.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/56.png);" value='{"name":"植物大战僵尸","url":"http://f.doyo.cn/special/flash/534753/pvz_9_15.swf","icoid":"","type":"1","img":"ico/56.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/57.png);" value='{"name":"醉西游","url":"http://zxy.yeyou.com/list.shtml?gtype=1018&uf=","icoid":"","type":"1","img":"ico/57.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/65.png);" value='{"name":"暴力摩托","url":"http://f3.doyo.cn/flash/swf/ef/1e031c936e36ad79bd09.swf","icoid":"","type":"1","img":"ico/65.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/67.png);" value='{"name":"部落守卫战","url":"http://bl.qq.com","icoid":"","type":"1","img":"ico/67.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/68.png);" value='{"name":"愤怒的小鸟","url":"http://f3.doyo.cn/flash/swf/85/96a40a32fe64633f8078.swf","icoid":"","type":"1","img":"ico/68.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/71.png);" value='{"name":"街机三国","url":"http://www.91wan.com/jjsg","icoid":"","type":"1","img":"ico/71.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/74.png);" value='{"name":"洛克王国","url":"http://17roco.qq.com","icoid":"","type":"1","img":"ico/74.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/75.png);" value='{"name":"美图秀秀","url":"http://xiuxiu.web.meitu.com","icoid":"","type":"1","img":"ico/75.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/79.png);" value='{"name":"热血海贼王","url":"http://hzw.zuiyouxi.com","icoid":"","type":"1","img":"ico/79.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/81.png);" value='{"name":"三国杀","url":"http://web.sanguosha.com","icoid":"","type":"1","img":"ico/81.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/82.png);" value='{"name":"神曲","url":"http://sq.yeyou.com","icoid":"","type":"1","img":"ico/82.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/83.png);" value='{"name":"神仙道","url":"http://sxd.xd.com","icoid":"","type":"1","img":"ico/83.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                            <div class="outicoset">
+                                <div class="icoset" style="background-image:url(ico/97.png);" value='{"name":"在线PS","url":"http://www.tuyitu.com/photoshop","icoid":"","type":"1","img":"ico/97.png","bgcolor":""}'>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="byselfsite" class="contain" style="display:none;">
+                    <div class="label">
+                        网站名称，例如“米鱼”
+                    </div>
+                    <div id="namealert">
+                        名称不能为空
+                    </div>
+                    <input type="text" class="miyuinput" id="miyuinput">
+                    </input>
+                    <div class="label">
+                        网站地址，例如“miyudaohang.com”
+                    </div>
+                    <div id="urlalert">
+                        地址不能为空
+                    </div>
+                    <input type="text" class="miyuinput" id="miyuurl">
+                    </input>
+                    <div class="label">
+                        图标颜色
+                    </div>
+                    <div>
+                        <div class="bgcolor" style="background-color:rgb(244,179,0);">
+                        </div>
+                        <div class="bgcolor" style="background-color:rgb(120,186,0);">
+                        </div>
+                        <div class="bgcolor" style="background-color:rgb(38,115,236);">
+                        </div>
+                        <div class="bgcolor" style="background-color:rgb(174,17,61);">
+                        </div>
+                        <div class="bgcolor" style="background-color:rgb(99,47,0);">
+                        </div>
+                        <div class="bgcolor" style="background-color:rgb(176,30,0);">
+                        </div>
+                        <div class="bgcolor" style="background-color:rgb(193,0,79);">
+                        </div>
+                        <div class="bgcolor" style="background-color:rgb(114,0,172);">
+                        </div>
+                        <div class="bgcolor" style="background-color:rgb(70,23,180);">
+                        </div>
+                        <div class="bgcolor" style="background-color:rgb(0,106,193);">
+                        </div>
+                        <div class="bgcolor" style="background-color:rgb(0,130,135);">
+                        </div>
+                        <div class="bgcolor" style="background-color:rgb(25,153,0);">
+                        </div>
+                        <div class="bgcolor" style="background-color:rgb(255,152,29);">
+                        </div>
+                        <div class="bgcolor" style="background-color:rgb(255,46,18);">
+                        </div>
+                        <div class="bgcolor" style="background-color:rgb(255,29,119);">
+                        </div>
+                        <div class="bgcolor" style="background-color:rgb(170,64,255);">
+                        </div>
+                        <div class="bgcolor" style="background-color:rgb(31,174,255);">
+                        </div>
+                        <div class="bgcolor" style="background-color:rgb(86,197,255);">
+                        </div>
+                        <div class="bgcolor" style="background-color:rgb(0,216,204);">
+                        </div>
+                        <div class="bgcolor" style="background-color:rgb(145,209,0);">
+                        </div>
+                        <div class="bgcolor" style="background-color:rgb(225,183,0);">
+                        </div>
+                        <div class="bgcolor" style="background-color:rgb(225,118,118);">
+                        </div>
+                        <div class="bgcolor" style="background-color:rgb(0,164,164);">
+                        </div>
+                        <div class="bgcolor" style="background-color:rgb(255,125,35);">
+                        </div>
+                        <div class="bgcolor" style="background-color:rgb(105,105,105);">
+                        </div>
+                    </div>
+                    <div id="bgpointer">
+                    </div>
+                    <div id="icodemoout" class="outicoset">
+                        <div id="icodemo">
+                            <span id="iconame">
+                                米鱼
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div id="nativeapp" class="contain" style="display:none;">
+                    <div id="apps">
+                        <div id="applist">
+                        </div>
+                        <div id="applistbottom">
+                        </div>
+                        <div id="appcolor" style="display:none;">
+                            <div class="label">
+                                图标颜色
+                            </div>
+                            <div>
+                                <div class="appbgcolor" style="background-color:rgb(0,130,135);">
+                                </div>
+                                <div class="appbgcolor" style="background-color:rgb(244,179,0);">
+                                </div>
+                                <div class="appbgcolor" style="background-color:rgb(120,186,0);">
+                                </div>
+                                <div class="appbgcolor" style="background-color:rgb(38,115,236);">
+                                </div>
+                                <div class="appbgcolor" style="background-color:rgb(174,17,61);">
+                                </div>
+                                <div class="appbgcolor" style="background-color:rgb(99,47,0);">
+                                </div>
+                                <div class="appbgcolor" style="background-color:rgb(176,30,0);">
+                                </div>
+                                <div class="appbgcolor" style="background-color:rgb(193,0,79);">
+                                </div>
+                                <div class="appbgcolor" style="background-color:rgb(114,0,172);">
+                                </div>
+                                <div class="appbgcolor" style="background-color:rgb(70,23,180);">
+                                </div>
+                                <div class="appbgcolor" style="background-color:rgb(0,106,193);">
+                                </div>
+                                <div class="appbgcolor" style="background-color:rgb(25,153,0);">
+                                </div>
+                                <div class="appbgcolor" style="background-color:rgb(255,152,29);">
+                                </div>
+                                <div class="appbgcolor" style="background-color:rgb(255,46,18);">
+                                </div>
+                                <div class="appbgcolor" style="background-color:rgb(255,29,119);">
+                                </div>
+                                <div class="appbgcolor" style="background-color:rgb(170,64,255);">
+                                </div>
+                                <div class="appbgcolor" style="background-color:rgb(31,174,255);">
+                                </div>
+                                <div class="appbgcolor" style="background-color:rgb(86,197,255);">
+                                </div>
+                                <div class="appbgcolor" style="background-color:rgb(0,216,204);">
+                                </div>
+                                <div class="appbgcolor" style="background-color:rgb(145,209,0);">
+                                </div>
+                                <div class="appbgcolor" style="background-color:rgb(225,183,0);">
+                                </div>
+                                <div class="appbgcolor" style="background-color:rgb(225,118,118);">
+                                </div>
+                                <div class="appbgcolor" style="background-color:rgb(0,164,164);">
+                                </div>
+                                <div class="appbgcolor" style="background-color:rgb(255,125,35);">
+                                </div>
+                                <div class="appbgcolor" style="background-color:rgb(105,105,105);">
+                                </div>
+                            </div>
+                            <div id="appbgpointer">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="addbutton">
+                    <input value="添加" type="button" id="addbu" />
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>

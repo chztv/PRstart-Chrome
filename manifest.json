@@ -1,0 +1,21 @@
+{
+   "background": {
+      "page": "index.html"
+   },
+   "chrome_url_overrides": {
+      "newtab": "index.html"
+   },
+   "content_security_policy": "script-src 'self' 'unsafe-eval' ; object-src 'self'",
+   "description": "PR新标签页采用html5、css3等最新技术，借鉴metro风格重新定义了chrome新标签页。有多个桌面供用户添加常用网站和应用，有流畅的滑动切换动画；整合了多家搜索引擎；可自动获取用户所在城市天气；可跟随bing网站每日自动更换壁纸，也可设置本地图片做壁纸。",
+   "icons": {
+      "128": "icon128.png",
+      "16": "icon16.png",
+      "48": "icon48.png"
+   },
+   "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCJWIsDiWLn+rxZujy3vCiwvaOWMpqyARxZcqeOqwQzH2OGMyaUltPy9xWYoG6pjTluGaKdHnYyarK1MqxDVeqJr7Zgb4Z2Gkheb963HKdQCIZFB0TsktTB4Ykhz+kaOzbc2jS6zT7k+52KI/ApgPO1qlJoYvOPlFRwZ1oL+hiPbwIDAQAB",
+   "manifest_version": 2,
+   "name": "PR新标签页",
+   "permissions": [ "management", "http://*/", "https://*/" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.0.0"
+}
