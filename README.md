@@ -1,12 +1,12 @@
 <h1>
-<a name="360fxexporter" class="anchor" href="#thunderlixianexporter"><span class="mini-icon mini-icon-link"></span></a>PR新标签页</h1>
+<a name="PRstart" class="anchor" href="#PRstart"><span class="mini-icon mini-icon-link"></span></a>PR新标签页</h1>
 
 <p>œ
-Chrome新标签页</p>
+PR新标签页是一款Chrome应用，可自定义各类标签，无任何强制无法删除的网站标签，完全开放，无广告，无木马。</p>
 
 <ul>
 <li><strong>说明</strong></li>
-<li>目前支持任意添加.</li>
+<li>PR新标签页修改自米鱼新标签页，在此向米鱼致敬.</li>
 
 
 <h2>
@@ -14,25 +14,22 @@ Chrome新标签页</p>
 
 <p>2013-09-30</p>
 <blockquote>
-<p>说明</p>
-<p>说明</p>
+<p>初版.</p>
 </blockquote>
 
 
 <h2>
 <a name="usage" class="anchor" href="#usage"><span class="mini-icon mini-icon-link"></span></a>Usage</h2>
 
-<p>安装Userscript</p>
+<p>如何安装</p>
 
 <blockquote>
-<p>使用支持userscript的浏览器访问： <a href="https://raw.github.com/chztv/360FXExporter/master/360FXExporter.user.js">360FXExporter.user.js</a></p>
-
-<p>打开360的分享链接页面，开始使用吧！<br></p>
+<p>暂时还没提交至Chrome应用商店，仅支持开发模式手工安装</p>
 </blockquote>
 
 
 <h2>
 <a name="license" class="anchor" href="#license"><span class="mini-icon mini-icon-link"></span></a>License</h2>
 
-<p>360FXExporter is licensed under GNU Lesser General Public License.
+<p>PRstart is licensed under GNU Lesser General Public License.
 You may get a copy of the GNU Lesser General Public License from <a href="http://www.gnu.org/licenses/lgpl.txt">http://www.gnu.org/licenses/lgpl.txt</a></p>
